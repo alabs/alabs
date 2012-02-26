@@ -1,1 +1,80 @@
 <% @page_title = 'Inicio' %>
+
+<div class="header header_home page">
+  <div class="prige_tag"></div>
+  <%= image_tag('screenshot.jpg', :class => 'main_screenshot') %>
+  <div class="info">
+    <h1>oiga.me, tu plataforma de movilización ciudadana</h1>
+    <p>oiga.me es una plataforma de acción y movilización ciudadana, una herramienta de participación democrática. A través de oiga.me podrás lanzar peticiones que sean firmadas por miles de personas, por ejemplo, contra los recortes en educación y sanidad pero, además, con un click, tú y todos los que participen podréis mandar mails directamente a los responsables de dichas políticas.</p>
+    <a href="http://oiga.me/" class="button icon"><%= image_tag('go_icon.png') %><span>Visita oiga.me</span></a>
+    <span class="trial">Puede ser beneficioso para la democrácia de su estado.</span>
+  </div>
+  <div class="clear"></div>
+</div><!-- header_home -->
+<div id="home" class="padding">
+  <div id="services">
+    <div class="section_title">
+      <h3>Servicios</h3>
+    </div>
+    <p>
+      <b>Hosting</b>
+      <%= image_tag('track.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+    <p>
+      <b>Telefonía</b>
+      <%= image_tag('schedule.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+    <p class="last">
+      <b>Formación</b>
+      <%= image_tag('organize.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+	  <div class="clear spacer"></div>
+    <p>
+      <b>Desarrollo</b>
+      <%= image_tag('time.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+    <p>
+      <b>Aplicaciones para móviles</b>
+      <%= image_tag('dude.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+    <p class="last">
+      <b>Dominar el mundo</b>
+      <%= image_tag('task.gif') %>
+		  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+    </p>
+    <div class="clear"></div>
+  </div><!-- features -->
+  <div id="features">
+    <div class="section_title">
+      <h3>Últimas noticias</h3>
+    </div>
+    <div id="blog-news">
+      <b>Blog de aLabs</b>
+      <ul>
+        <% @posts.each do |post| %>
+          <li style="margin-bottom: 8px;"><%= link_to post['title'], post['link'] %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="alabs-social">
+      <b>aLabs Social</b>
+      <ul>
+        <% @tweets.each do |tweet| %>
+          <li style="margin-bottom: 8px;"><%= tweet.text %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="contact">
+      <b>Contáctanos</b>
+      <p>Puedes llamarnos de forma gratuita usando tu navegador y pulsando el siguiente botón.</p>
+      <input id="call" type="button" disabled="true" value="Cargando..." />
+      <span id="status"></span>
+    </div> 
+	  <div class="clear spacer"></div>
+  </div><!-- screenshots -->
+</div><!-- padding -->

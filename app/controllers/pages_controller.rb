@@ -19,4 +19,7 @@ class PagesController < ApplicationController
     # Mostrar los últimos tweets
     @tweets = Twitter.user_timeline('alabs_es')[0,4]
   end
+
+  def about
+  end
 end
