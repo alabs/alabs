@@ -1,14 +1,94 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Alabs</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= @page_title %> - aLabs</title>
+    <%= stylesheet_link_tag 'application', :media => 'all' %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="header">
+      <div class="page">
+        <%= link_to 'aLabs', root_path, :class => 'logo' %>
+        <ul>
+          <li class="active"><%= link_to 'Inicio', root_path %></li>
+          <li><%= link_to 'Nosotros', '#' %></li>
+          <li><%= link_to 'Servicios', '#' %></li>
+          <li><%= link_to 'Clientes', '#' %></li>
+          <li><%= link_to 'Blog', '#' %></li>
+          <li><%= link_to 'Software', '#' %></li>
+          <li><%= link_to 'Contacto', '#' %></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div><!-- header -->
+    <div id="page">
+      <div class="top"></div>
+      <div class="content">
+        <div class="header header_home page">
+          <div class="prige_tag"></div>
+          <%= image_tag('screenshot.jpg', :class => 'main_screenshot') %>
+          <div class="info">
+            <h1>oiga.me, tu plataforma de movilización ciudadana</h1>
+            <p>oiga.me es una plataforma de acción y movilización ciudadana, una herramienta de participación democrática. A través de oiga.me podrás lanzar peticiones que sean firmadas por miles de personas, por ejemplo, contra los recortes en educación y sanidad pero, además, con un click, tú y todos los que participen podréis mandar mails directamente a los responsables de dichas políticas.</p>
+            <a href="http://oiga.me/" class="button icon"><%= image_tag('go_icon.png') %><span>Visita oiga.me</span></a>
+            <span class="trial">Puede ser beneficioso para la democrácia de su estado.</span>
+          </div>
+          <div class="clear"></div>
+        </div><!-- header_home -->
+        <div id="home" class="padding">
+          <div id="features">
+            <div class="section_title">
+              <h3>Servicios</h3>
+            </div>
+            <p>
+              <b>Hosting</b>
+              <%= image_tag('track.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+            <p>
+              <b>Telefonía</b>
+              <%= image_tag('schedule.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+            <p class="last">
+              <b>Formación</b>
+              <%= image_tag('organize.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+					  <div class="clear spacer"></div>
+            <p>
+              <b>Desarrollo</b>
+              <%= image_tag('time.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+            <p>
+              <b>Aplicaciones para móviles</b>
+              <%= image_tag('dude.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+            <p class="last">
+              <b>Dominar el mundo</b>
+              <%= image_tag('task.gif') %>
+						  Lorem ipsum dolor sit amet sit nsectetur adipiscing elit. Nunc et tempus est, a interdum lacus dignissim quis. Nunc pellentesque tempus est, a interdum lacus dignissim quis.
+            </p>
+            <div class="clear"></div>
+          </div><!-- features -->
+        </div><!-- padding -->
+      </div><!-- content -->
+      <div class="bottom"></div>
+    </div><!-- page -->
+    <div id="footer" class="page">
+      <p>Copyright &copy; 2010 - <%= Time.now.year %> aLabs. Este sitio tiene <%= link_to 'esta licencia', 'http://creativecommons.org/licenses/by-sa/3.0/deed.es_ES' %> Creative Commons.</p>
+      <ul>
+        <li><%= link_to 'Inicio', root_path %></li>
+        <li><%= link_to 'Nosotros', '#' %></li>
+        <li><%= link_to 'Servicios', '#' %></li>
+        <li><%= link_to 'Blog', '#' %></li>
+        <li><%= link_to 'Contacto', '#' %></li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+  </body>
 </html>

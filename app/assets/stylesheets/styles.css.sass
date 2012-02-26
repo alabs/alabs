@@ -1,0 +1,605 @@
+@font-face
+  font-family: 'Roboto'
+  src: url("Roboto-Regular.ttf")
+
+*
+  padding: 0
+  margin: 0
+
+/*--------------------------------------------
+ *Global Elements
+ *---------------------------------------------
+
+body
+  font-family: Roboto, Arial, sans-serif
+  font-size: 13px
+  color: #707070
+  background: #ebebeb
+
+div
+  &.page
+    width: 960px
+    margin: 0 auto
+    position: relative
+  &#header
+    background: image-url('header_bg.gif') repeat-x top
+    height: 150px
+    a.logo
+      float: left
+      margin-top: 18px
+      background: image-url('logo.png') no-repeat top
+      width: 160px
+      height: 52px
+      text-indent: -999999px
+    ul
+      list-style: none
+      float: right
+      margin-top: 48px
+      li
+        height: 60px
+        float: left
+        margin-left: 0px
+        padding: 0px 0px 0px 16px
+        a
+          color: #555555
+          font-size: 13px
+          text-decoration: none
+          display: block
+          font-weight: bold
+          padding: 4px 10px 4px 10px
+          &:hover
+            color: #333
+    li.active a
+      background: #dddddd
+      color: #000
+      border-radius: 5px
+  &#page
+    width: 980px
+    margin: 0 auto
+    margin-top: -33px
+    .header
+      background: url('../images/page_header.gif') repeat-x top
+      height: 60px
+      h1
+        padding-left: 30px
+        padding-top: 5px
+      ul
+        list-style: none
+        float: right
+        margin-top: -30px
+        margin-right: 10px
+        li
+          float: left
+          margin-right: 20px
+          height: 30px
+          display: block
+          &.active
+            background: url('../images/sub_menu-left.png') no-repeat top left
+          a
+            font-size: 14px
+            font-weight: bold
+            text-decoration: none
+            color: #8b8c8b
+            display: block
+            padding: 6px 20px 0px 20px
+            height: 30px
+          &.active a
+            color: #464646
+            background: url('../images/sub_menu-right.png') no-repeat top right
+          a:hover
+            color: #555
+    .header_home
+      background: image-url('home_header.gif') repeat-x bottom
+      height: 320px
+      position: relative
+    .header .price_tag
+      width: 130px
+      height: 130px
+      position: absolute
+      top: -55px
+      right: -35px
+    .header_home
+      img.main_screenshot
+        float: left
+        padding: 20px 0px 0px 35px
+      .info
+        width: 450px
+        float: right
+        margin: 25px 50px 0px 0px
+        h1
+          padding: 0
+          margin-bottom: 15px
+          font-size: 30px
+          color: #363636
+        p
+          font-size: 13px
+          color: #363636
+          margin-bottom: 30px
+        .trial
+          font-size: 11px
+          color: #7d7d7d
+          margin-left: 12px
+    .top
+      background: image-url('page_top.gif') no-repeat top
+      height: 23px
+    .content
+      background: image-url('page_middle.gif') repeat-y top
+      .padding
+        padding: 25px 45px 25px 45px
+    .left
+      width: 600px
+      float: left
+    .right
+      width: 245px
+      float: right
+    .bottom
+      background: image-url('page_bottom.gif') no-repeat bottom
+      height: 23px
+    .section_title
+      width: 240px
+      height: 56px
+      margin-left: -46px
+      margin-bottom: 10px
+      margin-top: 30px
+      h3
+        font-size: 15px
+        color: #fff
+        padding: 5px 0px 0px 45px
+  &#footer
+    margin-top: 5px
+    padding-bottom: 30px
+    p
+      float: left
+      color: #888
+    ul
+      list-style: none
+      float: right
+      li
+        float: left
+        a
+          margin-left: 20px
+          color: #707070
+          text-decoration: none
+          &:hover
+            color: #333
+  &.sidebar_box
+    background: #e9eae9
+    padding: 15px 20px 10px 20px
+    margin-bottom: 20px
+    h4
+      font-size: 13px
+      color: #444
+      font-weight: bold
+      margin-bottom: 5px
+    p
+      font-size: 12px
+      color: #707070
+      line-height: 18px
+      margin-bottom: 0
+    ul
+      list-style: circle
+      padding-left: 16px
+      margin-top: 10px
+      li
+        margin-bottom: 5px
+    a.rss
+      background: url('../images/icons/rss.png') no-repeat top left
+      padding-left: 22px
+      text-decoration: none
+      color: #444
+      font-weight: bold
+      display: block
+      margin-bottom: 5px
+    .text_field
+      width: 185px
+      padding: 8px
+      margin-bottom: 10px
+  &#screenshots
+    position: relative
+    padding-bottom: 25px
+    .scrollable
+      position: relative
+      overflow: hidden
+      width: 900px
+      height: 110px
+      .items
+        width: 20000em
+        position: absolute
+    a
+      &.controls
+        display: block
+        width: 17px
+        height: 31px
+        text-indent: -999999px
+        background: url('../images/slide-controls.gif') no-repeat top
+      &.prev
+        background-position: top left
+        position: absolute
+        top: 100px
+        left: -50px
+      &.next
+        background-position: top right
+        position: absolute
+        top: 100px
+        right: -50px
+    .items ul
+      list-style: none
+      float: left
+      li
+        float: left
+        background: url('../images/screenshot_bg.gif') no-repeat top left
+        width: 155px
+        height: 110px
+        margin-right: 25px
+        a
+          width: 145px
+          height: 100px
+          overflow: hidden
+          display: block
+    ul li img
+      padding: 10px 0px 0px 10px
+  &#features
+    p
+      float: left
+      width: 260px
+      font-size: 12px
+      color: #363636
+      margin-right: 50px
+      &.last
+        margin-right: 0
+      b
+        display: block
+        font-size: 17px
+        font-weight: normal
+        margin-bottom: 12px
+      img
+        float: left
+        margin-right: 15px
+        margin-top: -3px
+    .spacer
+      padding: 20px 0px 20px 0px
+  &#page div#about p
+    line-height: 24px
+  &#about
+    .team
+      width: 415px
+      margin-bottom: 20px
+      h3
+        font-size: 18px
+        span
+          color: #aaa
+    .member_left
+      float: left
+    .member_right
+      float: right
+  &#page div#about .team p
+    line-height: 21px
+    font-size: 12px
+  &#about .team
+    img
+      float: left
+      margin-right: 15px
+      margin-top: 5px
+    ul
+      list-style: none
+      li
+        float: left
+        margin-right: 10px
+        a
+          text-decoration: none
+          background: #ddd
+          padding: 3px 8px 3px 8px
+          font-size: 12px
+          &:hover
+            background: #ccc
+  &#row_names
+    float: left
+    margin: 83px 0px 0px 30px
+    ul
+      list-style: none
+      line-height: 44px
+      li
+        font-size: 14px
+        text-align: right
+        color: #111
+  &#price_table
+    margin-bottom: 30px
+    float: right
+    table
+      border: 1px solid #d3d4d3
+      text-align: center
+      thead
+        background: #ededed url('../images/table_header.gif') repeat-x bottom
+        td
+          padding: 15px 0px 15px 0px
+          width: 177px
+          border-right: 1px solid #d3d3d3
+      td.last
+        border-right: none
+      thead td h2
+        color: #000000
+        font-size: 21px
+        margin-bottom: 12px
+        font-weight: bold
+    tbody
+      td
+        font-size: 14px
+        color: #555555
+        padding: 12px 0px 12px 0px
+        border-right: 1px solid #d9d9d9
+        border-bottom: 1px solid #e6e6e6
+      tr
+        &.color td
+          background: #eee
+        &.buttons td
+          padding: 30px 0px 30px 0px
+          border-bottom: none
+  &#faq
+    h4
+      font-size: 16px
+      margin-bottom: 15px
+    .left
+      width: 410px
+      float: left
+      margin-bottom: 25px
+    .right
+      width: 410px
+      float: right
+  &#signup
+    h2
+      font-size: 14px
+      font-weight: bold
+      background: url('../images/hr.gif') repeat-x 0px 10px
+      margin-bottom: 15px
+      span
+        background: #F8F9F8
+        padding-right: 12px
+        color: #333
+    form
+      label
+        display: block
+        float: left
+        width: 85px
+        padding-right: 30px
+        padding-top: 4px
+        text-align: right
+        font-size: 12px
+        &.error
+          float: none
+          display: inline
+          margin-left: 10px
+          color: #DD3030
+          position: relative
+          top: -2px
+      .text_field
+        padding: 6px
+      .card_type select
+        float: left
+    img.card_types
+      float: left
+      margin-left: 10px
+      margin-top: -3px
+    .margin
+      padding: 15px 0px 15px 0px
+  &#blog
+    .post
+      background: url('../images/hr.gif') repeat-x bottom
+      padding-bottom: 30px
+      margin-bottom: 30px
+    span.meta
+      display: block
+      margin: 5px 0px 5px 0px
+      color: #999
+    .blog_img
+      width: 621px
+      height: 184px
+      background: url('../images/blog_img_bg.gif') no-repeat top
+      margin-left: -15px
+      img
+        padding: 17px 0px 0px 19px
+    .content
+      margin-bottom: 25px
+      margin-top: 10px
+    .read_more
+      float: right
+      margin-top: -10px
+    a.comments
+      background: url('../images/icons/comment.png') no-repeat top left
+      padding-left: 22px
+      float: left
+      font-size: 12px
+  &#html_elements h1
+    margin-bottom: 5px
+
+/*--------------------------------------------
+ *Sidebar
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *Home
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *About
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *Pricing
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *Signup
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *Blog
+ *---------------------------------------------
+
+/*--------------------------------------------
+ *HTML Elements
+ *---------------------------------------------
+
+h2, h3, h4, h5, h6
+  margin-bottom: 5px
+
+div#page div#html_elements p
+  margin-bottom: 25px
+
+/*--------------------------------------------
+ *Typography
+ *---------------------------------------------
+
+h1
+  font-size: 26px
+  font-weight: normal
+  color: #5f5f5f
+  letter-spacing: -0.02em
+
+h2
+  font-size: 23px
+  color: #707070
+  font-weight: normal
+
+h3
+  font-size: 20px
+  color: #363636
+  font-weight: normal
+
+h4
+  font-size: 19px
+  color: #252525
+  font-weight: normal
+
+h5
+  font-size: 17px
+  color: #888
+  font-weight: normal
+  margin-bottom: 5px
+
+h6
+  font-size: 15px
+  color: #999
+  font-weight: normal
+  margin-bottom: 5px
+
+b
+  color: #444
+
+span
+  &.highlight_dark
+    color: #fff
+    background: #555
+    padding: 2px 6px
+  &.highlight_light
+    background: #ffffc8
+    padding: 2px 6px
+
+div
+  &#page p
+    margin-bottom: 15px
+    line-height: 22px
+  &.wrap_image_left, &.wrap_image_right
+    background: url('../images/about_img_bg.gif') no-repeat top
+    width: 317px
+    height: 187px
+  &.wrap_image_left
+    float: left
+    margin: 0px 15px 0px 0px
+  &.wrap_image_right
+    float: right
+    margin: 0px 0px 0px 15px
+  &.wrap_image_left img, &.wrap_image_right img
+    padding: 12px 0px 0px 12px
+
+/*--------------------------------------------
+ *Forms
+ *---------------------------------------------
+
+form
+  .text_field
+    padding: 10px
+    border: 1px solid #d6d6d6
+    background: white url('../images/tf_bg.gif') repeat-x top
+    font-size: 13px
+    font-style: italic
+    color: #999
+  .default_text_active
+    font-style: normal
+    color: #777
+  p
+    float: left
+    margin: 0
+    margin-right: 50px
+    &.last
+      margin-right: 0
+    &.message
+      margin-top: 20px
+      float: none
+
+p
+  &.validation
+    font-weight: bold
+  &.error
+    color: #DD3030
+    font-weight: bold
+
+form
+  label
+    display: block
+    color: #555555
+    font-size: 15px
+    margin-bottom: 5px
+  input.text_field, select
+    width: 248px
+  textarea
+    width: 870px
+    height: 200px
+    font-size: 13px
+  .send_form
+    float: right
+    margin-top: 20px
+    margin-bottom: 10px
+
+/*--------------------------------------------
+ *Buttons
+ *---------------------------------------------
+
+a
+  &.button
+    padding: 8px 15px 10px 0px
+    font-size: 12px
+    color: #fff
+    font-weight: bold
+    text-decoration: none
+    position: relative
+    span
+      padding: 8px 5px 10px 20px
+  &.icon span
+    padding-left: 40px
+  &.button img
+    position: absolute
+    top: 6px
+    left: 11px
+
+/*--------------------------------------------
+ *Utility
+ *---------------------------------------------
+
+.clear
+  clear: both
+
+img
+  border: none
+
+a
+  outline: none
+  &:hover
+    text-decoration: none
+
+hr
+  border: none
+  background: #ccc
+  color: #ccc
+  width: 100%
+  height: 1px
+  margin: 20px 0px 20px 0px
