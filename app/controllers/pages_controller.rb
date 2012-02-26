@@ -22,4 +22,16 @@ class PagesController < ApplicationController
 
   def about
   end
+
+  def services
+  end
+
+  def customers
+  end
+
+  def software
+  end
+
+  def contact
+  end
 end

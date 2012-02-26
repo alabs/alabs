@@ -3,6 +3,10 @@ Alabs::Application.routes.draw do
   # first created -> highest priority.
 
   get 'about' => 'pages#about'
+  get 'services' => 'pages#services'
+  get 'customers' => 'pages#customers'
+  get 'software' => 'pages#software'
+  get 'contact' => 'pages#contact'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
