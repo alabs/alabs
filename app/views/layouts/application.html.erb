@@ -38,7 +38,7 @@
           <div class="clear"></div>
         </div><!-- header_home -->
         <div id="home" class="padding">
-          <div id="features">
+          <div id="services">
             <div class="section_title">
               <h3>Servicios</h3>
             </div>
@@ -75,6 +75,34 @@
             </p>
             <div class="clear"></div>
           </div><!-- features -->
+          <div id="features">
+            <div class="section_title">
+              <h3>Últimas noticias</h3>
+            </div>
+            <div id="blog-news">
+              <b>Blog de aLabs</b>
+              <ul>
+                <% @posts.each do |post| %>
+                  <li style="margin-bottom: 8px;"><%= link_to post['title'], post['link'] %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div id="alabs-social">
+              <b>aLabs Social</b>
+              <ul>
+                <% @tweets.each do |tweet| %>
+                  <li style="margin-bottom: 8px;"><%= tweet.text %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div id="contact">
+              <b>Contáctanos</b>
+              <p>Puedes llamarnos de forma gratuita usando tu navegador y pulsando el siguiente botón.</p>
+              <input id="call" type="button" disabled="true" value="Cargando..." />
+              <span id="status"></span>
+            </div> 
+					  <div class="clear spacer"></div>
+          </div><!-- screenshots -->
         </div><!-- padding -->
       </div><!-- content -->
       <div class="bottom"></div>
