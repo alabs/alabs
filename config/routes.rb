@@ -7,6 +7,7 @@ Alabs::Application.routes.draw do
   get 'customers' => 'pages#customers'
   get 'software' => 'pages#software'
   get 'contact' => 'pages#contact'
+  post 'contact' => 'pages#contact_message_received'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

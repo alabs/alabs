@@ -7,7 +7,7 @@ class PagesController < ApplicationController
     rss = RSS::Parser.parse(rss_feed, false)
     @posts = []
     rss.items.each_with_index do |i, n|
-      break if n == 4
+      break if n == 5
       item = { 
         'link' => i.link,
         'title' => i.title,
@@ -33,5 +33,17 @@ class PagesController < ApplicationController
   end
 
   def contact
+    @contact = Contact.new
+  end
+
+  def contact_message_received
+    @contact = Contact.new(params[:contact])
+    if @contact.save
+      Mailman.contact(@contact).deliver
+      flash[:notice] = 'Tu mensaje ha sido recibido, pronto nos pondremos en contacto.'
+    else
+      flash[:error] = 'Verifica los campos en rojo'
+      render :action => :contact
+    end
   end
 end
