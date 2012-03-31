@@ -6,17 +6,30 @@
     <%= stylesheet_link_tag 'application', :media => 'all' %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <link rel="alternate" type="application/rss+xml" title="aLabs &raquo; Feed" href="http://feeds.feedburner.com/alabs/blog" />
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-20296032-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    <link href="https://plus.google.com/110799938491152815749/" rel="publisher" />
   </head>
   <body class="<%= params[:action] %>_action">
     <div id="header">
       <div class="page">
-        <%= link_to 'aLabs', root_path, :class => 'logo' %>
+        <%= link_to 'aLabs', root_path, :class => 'logo', :title => 'Ir al inicio' %>
         <ul>
-          <%= nav_link 'Inicio', root_path %>
           <%= nav_link 'Nosotros', about_path %>
           <%= nav_link 'Servicios', services_path %>
           <%= nav_link 'Casos de Éxito', customers_path %>
           <%= nav_link 'Software', software_path %>
+          <li><%= link_to 'Residencia', 'http://blog.alabs.es/category/residencia-alabs/' %></li>
           <li><%= link_to 'Blog', 'http://blog.alabs.es/' %></li>
           <%= nav_link 'Contacto', contact_path %>
         </ul>
@@ -24,7 +37,7 @@
       </div>
     </div><!-- header -->
     <div id="page">
-      <div class="top"></div>
+      <div class="top">&nbsp;</div>
       <div class="content">
         <%= yield %>
       </div><!-- content -->
@@ -38,6 +51,7 @@
         <li><%= link_to 'Servicios', services_path %></li>
         <li><%= link_to 'Blog', '#' %></li>
         <li><%= link_to 'Contacto', contact_path %></li>
+        <li style="margin-top: -5px;"><%= link_to image_tag('logo-small.png'), root_path %></li>
       </ul>
       <div class="clear"></div>
     </div>

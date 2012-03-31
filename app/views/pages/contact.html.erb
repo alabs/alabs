@@ -10,48 +10,45 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mi mauris, ultricies id dictum a, malesuada sit amet diam. Nullam facilisis, sem sit amet ornare dapibus, lorem orci mattis orci, a pharetra tellus diam sed enim. Nulla viverra ultrices convallis. Etiam eleifend molestie rhoncus.</p>
     <div id="contact-form">
       <%= form_for @contact, :url => contact_path do |f| %>
-        <fieldset>
-          <legend>Rellena el formulario por favor</legend>
-          <div id="contact-form-fields">
-            <div class="contact-field">
-              <%= f.label :nombre %>
-              <%= f.text_field :name, :placeholder => 'Tu nombre' %>
-              <% if @contact.errors[:name] %>
-                <span class="error_message"><%= @contact.errors[:name].to_sentence %></span>
-              <% end %>
-            </div>
-            <div class="contact-field">
-              <%= f.label :correo_electrónico %>
-              <%= f.text_field :email, :placeholder => 'you@example.com' %>
-              <% if @contact.errors[:email] %>
-                <span class="error_message"><%= @contact.errors[:email].to_sentence %></span>
-              <% end %>
-            </div>
-            <div class="contact-field">
-              <%= f.label :asunto %>
-              <%= f.text_field :subject, :placeholder => 'Asunto descriptivo' %>
-              <% if @contact.errors[:subject] %>
-                <span class="error_message"><%= @contact.errors[:subject].to_sentence %></span>
-              <% end %>
-            </div>
-            <div class="contact-field">
-              <%= f.label :mensaje %>
-              <%= f.text_area :body, :cols => 50, :rows => 10, :placeholder => 'Cuéntanos, estaremos encantados de atenderte.' %>
-              <% if @contact.errors[:body] %>
-                <span class="error_message"><%= @contact.errors[:body].to_sentence %></span>
-              <% end %>
-            </div>
-            <div class="contact-field">
-              <%= f.check_box :mailing %> Deseo subscribirme a la lista de correo de aLabs
-            </div>
-            <div class="contact-actions">
-              <%= f.submit 'Enviar Mensaje' %>
-            </div>
-          </div><!-- contact-form-fields -->
-        </fieldset>
+        <div id="contact-form-fields">
+          <div class="contact-field">
+            <%= f.label :nombre %>
+            <%= f.text_field :name, :placeholder => 'Tu nombre' %>
+            <% if @contact.errors[:name] %>
+              <span class="error_message"><%= @contact.errors[:name].to_sentence %></span>
+            <% end %>
+          </div>
+          <div class="contact-field">
+            <%= f.label :correo_electrónico %>
+            <%= f.text_field :email, :placeholder => 'you@example.com' %>
+            <% if @contact.errors[:email] %>
+              <span class="error_message"><%= @contact.errors[:email].to_sentence %></span>
+            <% end %>
+          </div>
+          <div class="contact-field">
+            <%= f.label :asunto %>
+            <%= f.text_field :subject, :placeholder => 'Asunto descriptivo' %>
+            <% if @contact.errors[:subject] %>
+              <span class="error_message"><%= @contact.errors[:subject].to_sentence %></span>
+            <% end %>
+          </div>
+          <div class="contact-field">
+            <%= f.label :mensaje %>
+            <%= f.text_area :body, :cols => 50, :rows => 10, :placeholder => 'Cuéntanos, estaremos encantados de atenderte.' %>
+            <% if @contact.errors[:body] %>
+              <span class="error_message"><%= @contact.errors[:body].to_sentence %></span>
+            <% end %>
+          </div>
+          <div class="contact-field">
+            <%= f.check_box :mailing %> Deseo subscribirme a la lista de correo de aLabs
+          </div>
+          <div class="contact-actions">
+            <%= f.submit 'Enviar Mensaje' %>
+          </div>
+        </div><!-- contact-form-fields -->
       <% end %>
     </div><!-- contact-form -->
     <div class="clear"></div>
   </div><!-- left -->
-  <%= render :partial => 'right_sidebar' %>
+  <%= render :partial => 'partials/contact_sidebar' %>
 </div>
