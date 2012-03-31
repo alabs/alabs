@@ -28,7 +28,7 @@ $(document).ready(function() {
   $("#call").click(function() {
     $("#call").attr("disabled", true).val("Llamada en curso");
     //phono.phone.dial("sip:917714052@alabs.es:5070", {
-    phono.phone.dial("sip:2000@alabs.es:5070", {
+    phono.phone.dial("sip:2001@alabs.es:5070", {
       onRing: function() {
         $("#status").html("Llamando");
       },
