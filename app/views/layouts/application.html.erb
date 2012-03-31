@@ -7,18 +7,18 @@
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
+  <body class="<%= params[:action] %>_action">
     <div id="header">
       <div class="page">
         <%= link_to 'aLabs', root_path, :class => 'logo' %>
         <ul>
-          <li class="active"><%= link_to 'Inicio', root_path %></li>
-          <li><%= link_to 'Nosotros', about_path %></li>
-          <li><%= link_to 'Servicios', services_path %></li>
-          <li><%= link_to 'Casos de Éxito', customers_path %></li>
-          <li><%= link_to 'Software', software_path %></li>
-          <li><%= link_to 'Blog', 'http://alabs.lan/' %></li>
-          <li><%= link_to 'Contacto', contact_path %></li>
+          <%= nav_link 'Inicio', root_path %>
+          <%= nav_link 'Nosotros', about_path %>
+          <%= nav_link 'Servicios', services_path %>
+          <%= nav_link 'Casos de Éxito', customers_path %>
+          <%= nav_link 'Software', software_path %>
+          <li><%= link_to 'Blog', 'http://blog.alabs.es/' %></li>
+          <%= nav_link 'Contacto', contact_path %>
         </ul>
         <div class="clear"></div>
       </div>
