@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+  caches_page :about, :services, :customers, :software
+
   def index
     # Para pillar los titulares del blog
     require 'rss'
@@ -41,6 +43,7 @@ class PagesController < ApplicationController
     if @contact.save
       Mailman.contact(@contact).deliver
       flash[:notice] = 'Tu mensaje ha sido recibido, pronto nos pondremos en contacto.'
+      redirect_to root_url
     else
       flash[:error] = 'Verifica los campos en rojo'
       render :action => :contact
