@@ -1,7 +1,7 @@
 require "bundler/capistrano"
 
 set :scm,             :git
-set :repository,      "git@git.alabs.es:alabs.git"
+set :repository,      "gitolite@git.alabs.es:alabs.git"
 set :branch,          "origin/master"
 set :migrate_target,  :current
 set :ssh_options,     { :forward_agent => true }
