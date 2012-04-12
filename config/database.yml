@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: alabs_production
   pool: 5
-  username: root
-  password:
+  username: alabs_production
+  password: kljasd2342asdasldjksa
   host: localhost
