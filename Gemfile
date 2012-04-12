@@ -38,3 +38,5 @@ gem 'capistrano'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'twitter'
+
+gem 'exception_notification', :require => 'exception_notifier'

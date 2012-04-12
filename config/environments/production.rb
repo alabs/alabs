@@ -69,4 +69,10 @@ Alabs::Application.configure do
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => false
   }
+  
+  # Para notificar excepciones
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[alabs exception] ",
+    :sender_address => %{"notifier" <notifier@alabs.es>},
+    :exception_recipients => %w{debug@alabs.es}
 end
