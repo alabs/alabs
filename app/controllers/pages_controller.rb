@@ -20,18 +20,24 @@ class PagesController < ApplicationController
 
     # Mostrar los últimos tweets
     @tweets = Twitter.user_timeline('alabs_es')[0,4]
+    
+    set_http_cache(3.hours, visibility = true)
   end
 
   def about
+    set_http_cache(3.hours, visibility = true)
   end
 
   def services
+    set_http_cache(3.hours, visibility = true)
   end
 
   def customers
+    set_http_cache(3.hours, visibility = true)
   end
 
   def software
+    set_http_cache(3.hours, visibility = true)
   end
 
   def contact
