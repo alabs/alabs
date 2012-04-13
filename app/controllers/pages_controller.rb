@@ -25,19 +25,19 @@ class PagesController < ApplicationController
   end
 
   def about
-    set_http_cache(3.hours, visibility = true)
+    set_http_cache(6.hours, visibility = true)
   end
 
   def services
-    set_http_cache(3.hours, visibility = true)
+    set_http_cache(6.hours, visibility = true)
   end
 
   def customers
-    set_http_cache(3.hours, visibility = true)
+    set_http_cache(6.hours, visibility = true)
   end
 
   def software
-    set_http_cache(3.hours, visibility = true)
+    set_http_cache(6.hours, visibility = true)
   end
 
   def contact
